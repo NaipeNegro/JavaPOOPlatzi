@@ -37,21 +37,26 @@ public class Doctor extends User {
     }*/
 
     ArrayList<AvailableAppointment> availableAppointment = new ArrayList<>();
-    public void addAvailableAppointment(Date date, String time){
+    public void addAvailableAppointment(Date date, String time){ //método público que agrega objetos del tipo específico a una lista, es void porque no devuelve nada
         availableAppointment.add(new Doctor.AvailableAppointment(date, time));
     }
 
-    public ArrayList<AvailableAppointment> getAvailableAppointment(){
+    public ArrayList<AvailableAppointment> getAvailableAppointment(){ //metodo público que devuelve la lista creada
         return availableAppointment;
     }
 
+    @Override
+    public String toString() {
+        return super.toString()+ "\nEspecialidad: " + speciality + "\nDisponible: "+availableAppointment.toString();
+    }
+
     //AvailableAppointment Clase anidada
-    public static class AvailableAppointment{
+    public static class AvailableAppointment{ // clase anidada pública
         private int id;
         private Date date;
         private String time;
 
-        public AvailableAppointment(Date date, String time) {
+        public AvailableAppointment(Date date, String time) { //esto es el constructor de una clase anidada pública
             this.date = date;
             this.time = time;
         }
@@ -79,5 +84,10 @@ public class Doctor extends User {
         public void setTime(String time) {
             this.time = time;
         }
+        @Override
+        public String toString() {
+            return "Available Appointments\nFecha: " +date+"\nHora: "+time;
+        }
+
     }
 }

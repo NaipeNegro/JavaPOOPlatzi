@@ -34,7 +34,12 @@ public class Patient extends User {
     public String getBlood() {
         return blood;
     }
-    public Double getHeight() {
-        return height;
+    public String getHeight() {
+        return this.height+ " Mts.";
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() +"\nEdad: " + birthday + "\nAltura: " +getWeight()+"\nPeso: "+getHeight()+ "\nTipo de sangre:"+blood;
     }
 }
