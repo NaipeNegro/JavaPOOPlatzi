@@ -1,17 +1,17 @@
-import java.sql.SQLOutput;
-import java.util.Date;
+import model.Doctor;
+import model.Patient;
 
-import static ui.UIMenu.*;
+import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {
 
-        /*Doctor myDoctor = new Doctor();
+        /*model.Doctor myDoctor = new model.Doctor();
         myDoctor.name = "Alejandro Rodriguez";
         myDoctor.showName();
         myDoctor.showId();
 
-        Doctor myDoctorAnn = new Doctor();
+        model.Doctor myDoctorAnn = new model.Doctor();
         myDoctor.showId();
         myDoctorAnn.showId();
 
@@ -23,13 +23,14 @@ public class Main {
 
         //showMenu();
 
-        Doctor myDoctor = new Doctor("Anahí Salgado","Pediatría");
+        Doctor myDoctor = new Doctor("Anahí Salgado","anahi@lala.com");
         //System.out.println(myDoctor.name);
-        System.out.println(myDoctor.speciality);
+        //System.out.println(myDoctor.speciality);
 
         myDoctor.addAvailableAppointment(new Date(), "4pm");
         myDoctor.addAvailableAppointment(new Date(), "10pm");
         myDoctor.addAvailableAppointment(new Date(), "1pm");
+        System.out.println(myDoctor);
 
         for (Doctor.AvailableAppointment aA: myDoctor.getAvailableAppointment()){
             System.out.println(aA.getDate() + " " + aA.getTime());
@@ -41,6 +42,8 @@ public class Main {
 
         patient.setPhoneNumber("12345678");
         System.out.println(patient.getPhoneNumber());
+
+        System.out.println(patient);
 
     }
 }

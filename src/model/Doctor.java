@@ -1,9 +1,11 @@
+package model;
+
 import java.util.ArrayList;
 import java.util.Date;
 
 public class Doctor extends User {
 
-    String speciality;
+    public String speciality;
 
     public String getSpeciality() {
         return speciality;
@@ -14,13 +16,13 @@ public class Doctor extends User {
     }
 
     //constructor por defecto con agregado:
-    /*Doctor(){
-        System.out.println("Construyendo el Objeto Doctor");
+    /*model.Doctor(){
+        System.out.println("Construyendo el Objeto model.Doctor");
     }*/
 
     //constructor creado como ejemplo de la sobrecarga de métodos:
 
-    Doctor(String name, String email){
+    public Doctor(String name, String email){
         super(name, email);
         System.out.println("El nombre del doctor es "+ name);
         this.speciality= speciality;
@@ -33,7 +35,7 @@ public class Doctor extends User {
     }
 
     public void showId(){
-        System.out.println("El ID del Doctor es " + id);
+        System.out.println("El ID del model.Doctor es " + id);
     }*/
 
     ArrayList<AvailableAppointment> availableAppointment = new ArrayList<>();

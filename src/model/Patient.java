@@ -1,3 +1,5 @@
+package model;
+
 public class Patient extends User {
     //Atributos
 
@@ -6,7 +8,7 @@ public class Patient extends User {
     private Double weight;
     private Double height;
 
-    Patient(String name, String email){
+    public Patient(String name, String email){
         super(name, email);
     }
 
