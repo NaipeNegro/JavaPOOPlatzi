@@ -1,11 +1,14 @@
 package model;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
 public class Doctor extends User {
 
-    public String speciality;
+    private String speciality;
+    private ArrayList<AvailableAppointment> availableAppointment = new ArrayList<>();
 
     public String getSpeciality() {
         return speciality;
@@ -24,8 +27,8 @@ public class Doctor extends User {
 
     public Doctor(String name, String email){
         super(name, email);
-        System.out.println("El nombre del doctor es "+ name);
-        this.speciality= speciality;
+        //System.out.println("El nombre del doctor es "+ name);
+        //this.speciality= speciality;
 
     }
 
@@ -38,8 +41,8 @@ public class Doctor extends User {
         System.out.println("El ID del model.Doctor es " + id);
     }*/
 
-    ArrayList<AvailableAppointment> availableAppointment = new ArrayList<>();
-    public void addAvailableAppointment(Date date, String time){ //método público que agrega objetos del tipo específico a una lista, es void porque no devuelve nada
+
+    public void addAvailableAppointment(String date, String time){ //método público que agrega objetos del tipo específico a una lista, es void porque no devuelve nada
         availableAppointment.add(new Doctor.AvailableAppointment(date, time));
     }
 
@@ -52,14 +55,24 @@ public class Doctor extends User {
         return super.toString()+ "\nEspecialidad: " + speciality + "\nDisponible: "+availableAppointment.toString();
     }
 
+    @Override
+    public void showDataUser() {
+        System.out.println("Empleado Hospital Rivadavia");
+    }
+
     //AvailableAppointment Clase anidada
     public static class AvailableAppointment{ // clase anidada pública
         private int id;
         private Date date;
         private String time;
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
 
-        public AvailableAppointment(Date date, String time) { //esto es el constructor de una clase anidada pública
-            this.date = date;
+        public AvailableAppointment(String date, String time) { //esto es el constructor de una clase anidada pública
+            try {
+                this.date = format.parse(date);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
             this.time = time;
         }
 
@@ -73,6 +86,10 @@ public class Doctor extends User {
 
         public Date getDate() {
             return date;
+        }
+
+        public String getDate(String DATE) {
+            return format.format(date);
         }
 
         public void setDate(Date date) {

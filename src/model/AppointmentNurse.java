@@ -25,11 +25,11 @@ public class AppointmentNurse implements ISchedulable {
         this.patient = patient;
     }
 
-    public Doctor getDoctor() {
+    public Nurse getNurse() {
         return nurse;
     }
 
-    public void setDoctor(Doctor doctor) {
+    public void setNurse(Nurse nurse) {
         this.nurse = nurse;
     }
 

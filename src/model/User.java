@@ -1,6 +1,6 @@
 package model;
 
-public class User {
+public abstract class User {
     private int id;
     private String name;
     private String email;
@@ -11,6 +11,7 @@ public class User {
         this.name = name;
         this.email = email;
     }
+
 
     public int getId() {
         return id;
@@ -61,4 +62,6 @@ public class User {
         return "model.User: " + name + ", email: "+email+
                 "\nAddress: "+address+". Teléfono: "+phoneNumber;
     }
+
+    public abstract void showDataUser();
 }

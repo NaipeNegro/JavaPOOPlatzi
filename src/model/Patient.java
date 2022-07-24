@@ -44,4 +44,9 @@ public class Patient extends User {
     public String toString() {
         return super.toString() +"\nEdad: " + birthday + "\nAltura: " +getWeight()+"\nPeso: "+getHeight()+ "\nTipo de sangre:"+blood;
     }
+
+    @Override
+    public void showDataUser() {
+        System.out.println("Paciente del Hospital Rivadavia");
+    }
 }
