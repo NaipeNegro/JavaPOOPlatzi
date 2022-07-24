@@ -43,7 +43,7 @@ public class UIDoctorMenu {
 
             for (int i = 0; i < 3; i++) {
                 int j = i+1;
-                System.out.println(j + ". "+ UIMenu.MONTHS[i]);
+                System.out.println(j+ ". "+ UIMenu.MONTHS[i]);
             }
             System.out.println("0. Regresar");
 
@@ -65,7 +65,7 @@ public class UIDoctorMenu {
                 do {
                     System.out.println("Insertá la hora para "+ date+ " [17:00]");
                     time= sc.nextLine();
-                    System.out.println("La hora es "+ date + "\n1. Correcto\n2. Cambiar hora");
+                    System.out.println("La hora es "+ time + "\n1. Correcto\n2. Cambiar hora");
                     responseTime = Integer.valueOf(sc.nextLine());
                 } while (responseTime==2);
 
